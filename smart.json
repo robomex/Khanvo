@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "bootstrap-3": {},
+    "iron-router": {},
+    "scss": {},
+    "accounts-ui-bootstrap-3": {},
+    "timeago": {}
+  }
+}

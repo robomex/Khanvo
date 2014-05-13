@@ -1,0 +1,13 @@
+<template name="postItem">
+	<div class="post">
+		<h4>
+			<a href="#" class="vote btn {{votedClass}}">⬆</a>
+			<span class="author">{{author}}</span>
+			<span class="date"> ・ {{submittedText}}</span>
+			<span class="votes">{{pluralize votes "vote"}}</span>
+		</h4>
+		<div class="post-content">
+			<h3>{{content}}</h3>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,12 @@
+<template name="layout">
+	<div class="container">
+		{{> errors}}
+		<div class="row">
+			{{> sidebar}}
+			<div class="col-xs-10 col-sm-9 col-md-8 well" id="main">
+				{{> yield}}
+			</div>
+			{{> rightbar}}
+		</div>
+	</div>
+</template>

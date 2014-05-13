@@ -1,0 +1,12 @@
+<template name="khanvo">
+	<div>
+		{{#each posts}}
+			{{> postItem}}
+		{{/each}}
+	</div>
+	{{#if currentUser}}
+		{{> postSubmit}}
+	{{else}}
+		<p>Can't post here, freakshow.</p>
+	{{/if}}
+</template>
