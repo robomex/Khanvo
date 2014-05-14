@@ -7,13 +7,7 @@ $background-color: #eee;
 $post-background-color: #fff;
 
 
-.grid-block, .main, .post {
-	background: $post-background-color;
-	border-radius: 3px;
-	padding: 10px;
-	margin-bottom: 10px;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-}
+
 body {
 	background: $background-color;
 	color: #666;
@@ -31,14 +25,12 @@ body {
 .sidebar {
 	font-size: 17px;
 	letter-spacing: 0.8px;
-	transition: all .5s;
 }
 
 .sidebar ul {
 	list-style-type: none;
 	padding: 0;
 	background-color: #fff;
-	border-radius: 0px;
 }
 
 .sidebar a {
@@ -50,6 +42,7 @@ body {
 
 .sidebar a:hover{
 	background-color: $primary-color + #333;
+	
 }
 
 .sidebar ul .active{
@@ -76,36 +69,27 @@ body {
 
 
 .post {
+
+	background: $post-background-color;
+	padding: 10px 20px;
+	margin-bottom: 0px;
+	/*box-shadow: 115px 1px 3px rgba(255, 255, 255, 0.85);*/
+
 	.post-content { 
-		float: left;
 		h3 {
 			margin: 0;
 			line-height: 1.4;
-			font-size: 3.3em;
-			a {
-				display: inline-block;
-				margin-right: 5px;
-			}
-			span {
-				font-weight: normal;
-				font-size: 14px;
-				display: inline-block;
-				color: #aaaaaa;
-			}
-		}
-		p {
-			margin: 0;
+			font-size: 27px;
 		}
 
 	}
-	*zoom: 1;
 	-webkit-transition: all 300ms 0ms;
 	-webkit-transition-delay: ease-in;
 	-moz-transition: all 300ms 0ms ease-in;
 	-o-transition: all 300ms 0ms ease-in;
 	transition: all 300ms 0ms ease-in;
 	position: relative;
-	opacity: 1;
+
 	&:before, &:after {
 		content: "";
 		display: table;
@@ -113,8 +97,25 @@ body {
 	&:after {
 		clear: both;
 	}
-	&.invisble {
+	&.invisible {
 		opacity: 0;
+	}
+
+	h4{
+
+	 	&:after{
+	    content:"";
+	    position: absolute;
+	    width:33%;
+	    height: 1px;
+	    border-top: 1px solid #ddd;
+	    top:33%;
+	    margin-left: 10px;
+  }
+	}
+
+	&:hover{
+		background-color: $primary-color+#eee;
 	}
 	.date {
 		color: #ddd;
@@ -122,16 +123,10 @@ body {
 	.votes {
 		margin-left: 3px;
 	}
+	.author {
+		/*font-weight: bold;*/
+	}
 
 }
-.dropdown-menu span {
-	display: block;
-	padding: 3px 20px;
-	clear: both;
-	line-height: 20px;
-	color: #bbb;
-	white-space: nowrap;
-}
-
 
 
