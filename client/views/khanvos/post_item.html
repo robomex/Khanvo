@@ -1,11 +1,13 @@
 <template name="postItem">
 	<div class="post">
-		<h4>
-			<span class="author">{{author}}</span>
-			<span class="date"> ・ {{submittedText}}</span>
-			<span class="votes">{{pluralize votes "vote"}}</span>
-			<a href="#" class="btn {{votedClass}}">⬆</a>
-		</h4>
+		{{#unless samePoster}}
+			<h4>
+				<span class="author">{{author}}</span>
+				<span class="date"> ・ {{submittedText}}</span>
+				<span class="votes">{{pluralize votes "vote"}}</span>
+				<a href="#" class="btn {{votedClass}}">⬆</a>
+			</h4>
+		{{/unless}}
 		<div class="post-content">
 			<h3>{{content}}</h3>
 		</div>

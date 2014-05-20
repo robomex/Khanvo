@@ -9,6 +9,12 @@ Template.postItem.helpers({
 		} else {
 			return 'disabled';
 		}
+	},
+	samePoster: function() {
+
+		if (this.lastPoster == this.author) {
+			return true;
+		};
 	}
 });
 Template.postItem.events({

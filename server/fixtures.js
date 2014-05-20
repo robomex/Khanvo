@@ -23,7 +23,9 @@ if (Posts.find().count() === 0) {
 	  //userId = robo._id,
 	  author: robo.profile.name,
 	  submitted: now - 47 * 3600 * 1000,
-	  voters: [], votes: 0
+	  voters: [], 
+	  votes: 0,
+	  lastPoster: robo.profile.name
 	});
 		
 	Posts.insert({
@@ -33,7 +35,9 @@ if (Posts.find().count() === 0) {
 	  //userId = robo._id,
 	  author: robo.profile.name,
 	  submitted: now - 33 * 3600 * 1000,
-	  voters: [], votes: 0
+	  voters: [], 
+	  votes: 0,
+	  lastPoster: robo.profile.name
 	});
 	
 	Posts.insert({
@@ -43,6 +47,8 @@ if (Posts.find().count() === 0) {
 	  //userId = knoz._id,
 	  author: knoz.profile.name,
 	  submitted: now - 17 * 3600 * 1000,
-	  voters: [], votes: 0
+	  voters: [], 
+	  votes: 0,
+	  lastPoster: robo.profile.name
 	});
 }

@@ -22,8 +22,12 @@ Meteor.methods({
 			author: user.username,
 			submitted: new Date().getTime(),
 			voters: [],
-			votes: 0
+			votes: 0,
+			lastPoster: khanvo.lastPoster
 		});
+
+		// update khanvo lastPoster
+		Khanvos.update({khanvoName: postAttributes.khanvoName}, {$set: {lastPoster: post.author}});
 
 		// create the post, save the id
 		post._id = Posts.insert(post);
