@@ -53,27 +53,12 @@ body {
 	color: #fff;
 }
 
-/*.sidebar ul .active:after, .sidebar ul .active::after {
-       position: relative;
-    left: 100%;
-    top: 50%;
-    margin-top: -50%;
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: solid 20px red;
-    border-top: solid 15px transparent;
-    border-bottom: solid 15px transparent;
-    z-index: 99;
-}*/
-
 
 .post {
 
 	background: $post-background-color;
 	padding: 10px 20px;
 	margin-bottom: 0px;
-	/*box-shadow: 115px 1px 3px rgba(255, 255, 255, 0.85);*/
 
 	.post-content { 
 		h3 {

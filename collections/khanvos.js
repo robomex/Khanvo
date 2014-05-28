@@ -36,11 +36,21 @@ Meteor.methods({
 		// ensure the user is logged in
 		if (!user)
 			throw new Meteor.Error(401, 'You need to login to follow, fool');
-		Khanvos.update({
-			_id: khanvoId,
-			followers: {$ne: user._id}
-		}, {
-			$addToSet: {followers: user._id}
-		});
+		if (user.profile.following.length < 3) {
+			Khanvos.update({
+				_id: khanvoId,
+				followers: {$ne: user._id}
+			}, {
+				$addToSet: {followers: user._id}
+			});
+			
+			Meteor.users.update({
+				_id: user._id
+			}, {
+				$addToSet: {'profile.following': khanvoId}
+			});
+		} else {
+			throw new Meteor.Error(420, "You're already following THREE");
+		}
 	}
 });
