@@ -6,6 +6,12 @@ Template.rightbar.helpers({
 		} else {
 			return 'disabled';
 		}
+	},
+	isMember: function() {
+		var userId = Meteor.userId();
+		if (userId && _.include(this.members, userId)) {
+			return true;
+		}
 	}
 });
 

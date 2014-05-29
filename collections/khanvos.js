@@ -24,6 +24,7 @@ Meteor.methods({
 			creator: user.username,
 			submitted: new Date().getTime(),
 			followers: [],
+			members: [],
 			lastPoster: user._id
 		});
 
@@ -34,7 +35,7 @@ Meteor.methods({
 				_id: khanvoId,
 				followers: {$ne: user._id}
 			}, {
-				$addToSet: {followers: user._id}
+				$addToSet: {followers: user._id, members: user._id}
 			});
 			
 			Meteor.users.update({
