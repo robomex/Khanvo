@@ -16,7 +16,13 @@
           <ul class="nav navbar-nav">
           	{{#if currentUser}}<li><a href="{{pathFor 'createKhanvo'}}">New</a></li>{{/if}}
             <li><strong>{{khanvoName}}</strong><a href="#" class="follow btn {{followedClass}}">⬆</a></li>
-            {{#if isMember}}<li><div class="form-group"><label for="newMember">Invite a friend</label><input type="text" name="newMember" value="" placeholder="Who do you want to invite?"></div></li>{{/if}}
+            {{#if isMember}}<li>
+              <!--<div class="form-group">-->
+                {{> inputAutocomplete settings=settings id="newMember" class="input-xlarge" placeholder="Who do you want to invite?"}}
+
+                <!--<label for="newMember">Invite a friend</label><input type="text" name="newMember" value="" placeholder="Who do you want to invite?">-->
+              <!--</div>-->
+            </li>{{/if}}
           </ul>
         </div><!--/.nav-collapse -->
       </div>

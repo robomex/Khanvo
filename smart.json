@@ -5,6 +5,7 @@
     "scss": {},
     "accounts-ui-bootstrap-3": {},
     "timeago": {},
-    "spin": {}
+    "spin": {},
+    "autocomplete": {}
   }
 }

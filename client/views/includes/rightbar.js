@@ -15,6 +15,20 @@ Template.rightbar.helpers({
 	}
 });
 
+Template.rightbar.settings = function() {
+	return {
+		position: "bottom",
+		limit: 5,
+		rules: [
+			{
+				collection: Meteor.users,
+				field: "username",
+				template: Template.userPill
+			}
+		]
+	}
+};
+
 Template.rightbar.events({
 	'click .followable': function(e) {
 		e.preventDefault();
