@@ -33,11 +33,25 @@ Template.rightbar.events({
 	'click .followable': function(e) {
 		e.preventDefault();
 		Meteor.call('follow', this._id);
+	},
+	'submit form': function(e) {
+		e.preventDefault();
+
+		var $newMember = $(e.target).find('[name=newMember]');
+		var newGuy = {
+			newMember: $newMember.val(),
+			khanvoId: this._id
+		};
+
+		Meteor.call('newGuy', newGuy, function(error, id) {
+			if (error) {
+				// display the error to the user
+				throwError(error.reason);
+			} else {
+				$newMember.val('');
+			}
+		});
 	}
 });
 
-Template.rightbar.rendered = function() {
-  $('[data-toggle=offcanvas]').on('click', function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
-};
+Meteor.subscribe('allUsernames');

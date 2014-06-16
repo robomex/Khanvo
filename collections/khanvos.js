@@ -73,5 +73,25 @@ Meteor.methods({
 		} else {
 			throw new Meteor.Error(420, "You're already following FIVE");
 		}
+	},
+	newGuy: function(newMember) {
+		var newbie = Meteor.users.findOne({username: newMember.newMember});
+
+		if (newbie.profile.following.length <= 5) {
+			Khanvos.update({
+				_id: newMember.khanvoId,
+				followers: {$ne: newbie._id}
+			}, {
+				$addToSet: {followers: newbie._id, members: newbie._id}
+			});
+						
+			Meteor.users.update({
+				_id: newbie._id
+			}, {
+				$addToSet: {'profile.following': newMember.khanvoId}
+			});
+		} else {
+				throw new Meteor.Error(420, "You're already following FIVE");
+		}
 	}
 });

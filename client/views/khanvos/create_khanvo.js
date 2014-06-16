@@ -5,7 +5,7 @@ Template.createKhanvo.events({
 		var khanvo = {
 			khanvoName: $(e.target).find('[name=khanvoName]').val(),
 			description: $(e.target).find('[name=description]').val()
-		}
+		};
 
 		Meteor.call('khanvo', khanvo, function(error, id) {
 			if (error) {
