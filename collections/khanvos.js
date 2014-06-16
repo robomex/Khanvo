@@ -1,4 +1,7 @@
 Khanvos = new Meteor.Collection('khanvos');
+Khanvos.allow({
+	update: ownsDocument
+});
 
 Meteor.methods({
 	khanvo: function(khanvoAttributes) {
@@ -30,7 +33,7 @@ Meteor.methods({
 
 		var khanvoId = Khanvos.insert(khanvo);
 
-		if (user.profile.following.length < 3) {
+		if (user.profile.following.length <= 5) {
 			Khanvos.update({
 				_id: khanvoId,
 				followers: {$ne: user._id}
@@ -44,7 +47,7 @@ Meteor.methods({
 				$addToSet: {'profile.following': khanvoId}
 			});
 		} else {
-			throw new Meteor.Error(420, "You're already following THREE");
+			throw new Meteor.Error(420, "You're already following FIVE");
 		};
 
 		return khanvoId;
@@ -54,7 +57,7 @@ Meteor.methods({
 		// ensure the user is logged in
 		if (!user)
 			throw new Meteor.Error(401, 'You need to login to follow, fool');
-		if (user.profile.following.length < 3) {
+		if (user.profile.following.length <= 5) {
 			Khanvos.update({
 				_id: khanvoId,
 				followers: {$ne: user._id}
@@ -68,7 +71,7 @@ Meteor.methods({
 				$addToSet: {'profile.following': khanvoId}
 			});
 		} else {
-			throw new Meteor.Error(420, "You're already following THREE");
+			throw new Meteor.Error(420, "You're already following FIVE");
 		}
 	}
 });
