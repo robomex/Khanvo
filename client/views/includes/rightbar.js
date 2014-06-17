@@ -8,10 +8,13 @@ Template.rightbar.helpers({
 		}
 	},
 	isMember: function() {
-		var userId = Meteor.userId();
-		if (userId && _.include(this.members, userId)) {
+		var user = Meteor.user();
+		if (user && _.include(this.members, user.username)) {
 			return true;
 		}
+	},
+	member: function(khanvoName) {
+		return Khanvos.find({khanvoName: khanvoName}, {_id: 0, members: 1});
 	}
 });
 

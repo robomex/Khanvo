@@ -38,7 +38,7 @@ Meteor.methods({
 				_id: khanvoId,
 				followers: {$ne: user._id}
 			}, {
-				$addToSet: {followers: user._id, members: user._id}
+				$addToSet: {followers: user.username, members: user.username}
 			});
 			
 			Meteor.users.update({
@@ -62,7 +62,7 @@ Meteor.methods({
 				_id: khanvoId,
 				followers: {$ne: user._id}
 			}, {
-				$addToSet: {followers: user._id}
+				$addToSet: {followers: user.username}
 			});
 			
 			Meteor.users.update({
@@ -82,7 +82,7 @@ Meteor.methods({
 				_id: newMember.khanvoId,
 				followers: {$ne: newbie._id}
 			}, {
-				$addToSet: {followers: newbie._id, members: newbie._id}
+				$addToSet: {followers: newbie.username, members: newbie.username}
 			});
 						
 			Meteor.users.update({

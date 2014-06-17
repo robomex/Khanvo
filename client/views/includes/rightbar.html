@@ -16,14 +16,22 @@
           <ul class="nav navbar-nav">
           	{{#if currentUser}}<li><a href="{{pathFor 'createKhanvo'}}">New</a></li>{{/if}}
             <li><strong>{{khanvoName}}</strong><a href="#" class="follow btn {{followedClass}}">⬆</a></li>
-            {{#if isMember}}<li>
-              <form role="form">
-                <div class="form-group">
-                  {{> inputAutocomplete settings=settings name="newMember" class="input-xlarge" placeholder="Invite a friend"}}
-                  <button type="submit" class="btn btn-default">Add</button>
-                </div>
-              </form>
-            </li>{{/if}}
+            {{#if isMember}}
+              <li>
+                <form role="form">
+                  <div class="form-group">
+                    {{> inputAutocomplete settings=settings name="newMember" class="input-xlarge" placeholder="Invite a friend"}}
+                    <button type="submit" class="btn btn-default">Add</button>
+                  </div>
+                </form>
+              </li>
+            {{/if}}
+            <li>
+              <p>Members</p>
+              <ul>
+                {{#each member khanvoName}}<li>{{members}}</li>{{/each}}
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
