@@ -1,7 +1,7 @@
 Template.rightbar.helpers({
 	followedClass: function() {
-		var userId = Meteor.userId();
-		if (userId && !_.include(this.followers, userId)) {
+		var user = Meteor.user();
+		if (user && !_.include(this.followers, user.username)) {
 			return 'btn-primary followable';
 		} else {
 			return 'disabled';
