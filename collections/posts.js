@@ -29,6 +29,9 @@ Meteor.methods({
 		// update khanvo lastPoster
 		Khanvos.update({khanvoName: postAttributes.khanvoName}, {$set: {lastPoster: post.author}});
 
+		// update Khanvo's postCount
+		Khanvos.update({khanvoName: postAttributes.khanvoName}, {$inc: {postCount: 1}});
+
 		// create the post, save the id
 		post._id = Posts.insert(post);
 

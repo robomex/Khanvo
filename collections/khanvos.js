@@ -28,7 +28,8 @@ Meteor.methods({
 			submitted: new Date().getTime(),
 			followers: [],
 			members: [],
-			lastPoster: user._id
+			lastPoster: user._id,
+			postCount: 0
 		});
 
 		var khanvoId = Khanvos.insert(khanvo);
