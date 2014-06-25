@@ -17,7 +17,7 @@ Meteor.methods({
 		if (!khanvo)
 			throw new Meteor.Error(422, 'You gotta post to a Khanvo');
 
-		post = _.extend(_.pick(postAttributes, 'khanvoName', 'content'), {
+		post = _.extend(_.pick(postAttributes, 'khanvoName', 'content', 'postNumber'), {
 			userId: user._id,
 			author: user.username,
 			submitted: new Date().getTime(),
