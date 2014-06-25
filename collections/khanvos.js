@@ -47,6 +47,12 @@ Meteor.methods({
 			}, {
 				$addToSet: {'profile.following': khanvoId}
 			});
+
+			var postHack = {$set:{}};
+			postHack.$set[khanvoId] = khanvo.postCount;
+			Meteor.users.update(user._id, postHack);
+
+
 		} else {
 			throw new Meteor.Error(420, "You're already following FIVE");
 		};
