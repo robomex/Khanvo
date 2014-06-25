@@ -8,7 +8,6 @@ Meteor.publish('khanvos', function(user) {
 Meteor.publish('posts', function(khanvoName, readStart) {
 	khanvo = Khanvos.findOne({khanvoName: khanvoName});
 	var limit = parseInt(khanvo.postCount - 10);
-	console.log(limit);
 	return Posts.find({$and: [ {khanvoName: khanvoName}, {postNumber: {$gt: limit}}]});
 });
 Meteor.publish('allUsernames', function() {

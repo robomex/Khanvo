@@ -6,6 +6,7 @@
     "accounts-ui-bootstrap-3": {},
     "timeago": {},
     "spin": {},
-    "autocomplete": {}
+    "autocomplete": {},
+    "jquery-waypoints2": {}
   }
 }
