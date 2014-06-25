@@ -3,10 +3,7 @@
     "bootstrap-3": {},
     "iron-router": {},
     "scss": {},
-    "accounts-ui-bootstrap-3": {
-    	"git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3",
-    	"branch": "blaze"
-    },
+    "accounts-ui-bootstrap-3": {},
     "timeago": {},
     "spin": {},
     "autocomplete": {}
