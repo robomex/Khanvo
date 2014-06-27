@@ -7,12 +7,10 @@ standard-app-packages
 bootstrap-3
 iron-router
 scss
-accounts-ui-bootstrap-3
 accounts-password
 timeago
 spin
 autocomplete
-accounts-ui
-jquery-waypoints2
 jquery
 jquery-waypoints
+accounts-ui-bootstrap-3

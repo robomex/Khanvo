@@ -5,11 +5,10 @@
       "bootstrap-3": {},
       "iron-router": {},
       "scss": {},
-      "accounts-ui-bootstrap-3": {},
       "timeago": {},
       "spin": {},
       "autocomplete": {},
-      "jquery-waypoints2": {}
+      "accounts-ui-bootstrap-3": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -27,11 +26,6 @@
         "tag": "v0.9.3",
         "commit": "185f3b2787fb85e653f7b7bf603d1493ed14943d"
       },
-      "accounts-ui-bootstrap-3": {
-        "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.3.0-1",
-        "commit": "93ffa5d0e325dc7026de89f6d90c178fa04bdd3a"
-      },
       "timeago": {
         "git": "https://github.com/Differential/timeago.git",
         "tag": "v0.0.4",
@@ -47,10 +41,10 @@
         "tag": "v0.4.5",
         "commit": "48a706f0055939ac9e05dd619ad6d4df3dcc237d"
       },
-      "jquery-waypoints2": {
-        "git": "https://github.com/peerlibrary/meteor-jquery-waypoints2.git",
-        "tag": "v2.0.3.1",
-        "commit": "de163ced4ef1dc888ee6b192da722b05d6eb41da"
+      "accounts-ui-bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
+        "tag": "v0.3.0-1",
+        "commit": "93ffa5d0e325dc7026de89f6d90c178fa04bdd3a"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
