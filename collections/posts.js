@@ -54,5 +54,14 @@ Meteor.methods({
 			$addToSet: {voters: user._id},
 			$inc: {votes: 1}
 		});
+	},
+	read: function(postId) {
+		var post = Posts.findOne(postId);
+		var khanvo = Khanvos.findOne({khanvoName: post.khanvoName});
+		var khanvoId = khanvo._id;
+		var seenHack = {$set:{}};
+		var user = Meteor.user();
+		seenHack.$set[khanvoId] = post.postNumber;
+		Meteor.users.update(user._id, seenHack);
 	}
 });

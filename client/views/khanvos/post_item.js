@@ -21,5 +21,31 @@ Template.postItem.events({
 	'click .votable': function(e) {
 		e.preventDefault();
 		Meteor.call('vote', this._id);
-	}
+	}//,
+	/*$('.post-content').waypoint(function() {
+		//e.preventDefault();
+		var khanvo = Khanvos.findOne({khanvoName: this.khanvoName});
+		console.log(khanvo);
+		var khanvoId = khanvo._id;
+		var seenHack = {$set:{}};
+		var user = Meteor.user();
+		seenHack.$set[khanvoId] = this.postNumber;
+		Meteor.users.update(user._id, seenHack);
+		//Meteor.users.update({_id: Meteor.user()}, {$set: {khanvoId: this.postNumber}});
+	})*/
 });
+Template.postItem.rendered = function() {
+	$('.post-content').waypoint(function() {
+		//e.preventDefault();
+		//console.log(this.rr);
+		Meteor.call('read', this.title);
+	});
+};
+
+
+
+
+
+
+
+
