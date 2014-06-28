@@ -34,6 +34,8 @@ Template.postItem.events({
 		//Meteor.users.update({_id: Meteor.user()}, {$set: {khanvoId: this.postNumber}});
 	})*/
 });
+
+
 Template.postItem.rendered = function() {
 	$('.post-content').waypoint(function() {
 		//e.preventDefault();
